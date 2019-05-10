@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block styles %}
+    {{ block.super }}
+{% endblock %}
+
+{% block body %}
+{% include 'navbar.html' %}
+    <div class="container mt-5">
+        <span class="text-muted">Select file name:</span>
+        <select id="filename" class="form-control select2 p-2">
+            {% for i in filenames %}
+                <option value="{{ i }}"> {{ i }} </option>
+            {% endfor %}
+        </select>
+        <div class="mt-2">
+            <span class="text-muted">Select fields </span>
+            <select id="fields" class="form-control select2" multiple="multiple">
+                 {% for i in fields %}
+                    <option value="{{ i }}"> {{ i }} </option>
+                {% endfor %}
+            </select>
+        </div>
+        <button class="btn btn-primary mt-2" id="get-data"> Get data </button>
+        <div id="csv_data" class="mt-2"></div>
+    </div>
+
+{% endblock %}
+{% block scripts %}
+    {{ block.super }}
+    <script>
+        $(document).ready(function() {
+            $(".select2").select2();
+        });
+    </script>
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script src="{% static 'js/csvdata.js' %}"></script>
+
+{% endblock %}

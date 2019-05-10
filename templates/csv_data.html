@@ -1,0 +1,20 @@
+{% load static %}
+
+{% block body %}
+    <table class="table table-striped">
+        <thead>
+            {% for i in fields %}
+                <td> {{ i }} </td>
+            {% endfor %}
+        </thead>
+        <tbody>
+            {% for i in csv_data %}
+                <tr>
+                    {% for j in i %}
+                        <td> {{ j }} </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

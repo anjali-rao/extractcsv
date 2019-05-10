@@ -3,4 +3,5 @@
 ## Constraints
 - The csv files and fields can be chosen from the given list of files.
 - The chosen data on submission returns the data from the selected file from the chosen fields to be displayed on the screen.
-Sample output : https://github.com/anjali-rao/extractcsv/issues/new
+
+Sample output : https://github.com/anjali-rao/extractcsv/issues/1
